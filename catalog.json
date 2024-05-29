@@ -1,0 +1,32 @@
+{
+    "charts": {
+        "acme-dns-hetzner": {
+            "app_readme": "<h1>ACME DNS for Hetzner</h1>\n<p>ACME DNS provider for clusterissuer using Hetzner's DNS servers</p>",
+            "categories": [
+                "networking"
+            ],
+            "description": "ACME DNS provider for clusterissuer using Hetzner's DNS servers",
+            "healthy": true,
+            "healthy_error": null,
+            "home": "https://github.com/andreasots/acme-dns-hetzner",
+            "location": "/catalog/charts/acme-dns-hetzner",
+            "latest_version": "0.1.1",
+            "latest_app_version": "v0.1.1",
+            "latest_human_version": "v0.1.1_0.1.1",
+            "last_update": "2024-05-29 16:49:54",
+            "name": "acme-dns-hetzner",
+            "recommended": false,
+            "title": "ACME DNS for Hetzner",
+            "maintainers": [],
+            "tags": [
+                "acme",
+                "dns",
+                "hetzner"
+            ],
+            "screenshots": [],
+            "sources": [],
+            "icon_url": "https://www.hetzner.com/_resources/themes/hetzner/images/favicons/android-icon-192x192.png"
+        }
+    },
+    "test": {}
+}

@@ -1,0 +1,9 @@
+apiVersion: v2
+name: acme-dns-hetzner
+annotations:
+  title: "ACME DNS for Hetzner"
+description: ACME DNS provider for clusterissuer using Hetzner's DNS servers
+type: application
+version: 0.1.1
+appVersion: "v0.1.1"
+home: https://github.com/andreasots/acme-dns-hetzner

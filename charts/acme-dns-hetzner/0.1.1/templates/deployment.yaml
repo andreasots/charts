@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: acme-hetzner-dns
+  labels:
+    {{- include "acme-dns-hetzner.labels" . | nindent 4 }}
+spec:
+  selector:
+    matchLabels:
+      {{- include "acme-dns-hetzner.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      labels:
+        {{- include "acme-dns-hetzner.labels" . | nindent 8 }}
+    spec:
+      containers:
+        - name: {{ .Chart.Name }}
+          image: "ghcr.io/andreasots/acme-dns-hetzner:{{ .Chart.AppVersion }}"
+          imagePullPolicy: IfNotPresent
+          env:
+            - name: CONFIG_LISTEN
+              value: "0.0.0.0:80"
+            - name: CONFIG_USERNAME
+              value: {{ .Values.config.username }}
+            - name: CONFIG_PASSWORD
+              value: {{ .Values.config.password }}
+            - name: CONFIG_DOMAIN
+              value: {{ .Values.config.domain }}
+            - name: CONFIG_HETZNER_TOKEN
+              value: {{ .Values.config.hetzner_token }}
+          ports:
+            - name: http
+              containerPort: 80
+              protocol: TCP

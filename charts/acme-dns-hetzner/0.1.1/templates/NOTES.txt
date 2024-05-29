@@ -1,0 +1,2 @@
+ACME DNS provider URL:
+http://acme-hetzner-dns.{{ .Release.Namespace }}.svc.cluster.local

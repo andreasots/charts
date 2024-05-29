@@ -1,0 +1,36 @@
+groups:
+  - name: "App Configuration"
+    description: "Application specific configuration options"
+
+questions:
+  - variable: config
+    label: "Application configuration"
+    group: "App Configuration"
+    schema:
+      type: dict
+      required: true
+      attrs:
+        - variable: username
+          description: "ACME DNS username"
+          label: "Username"
+          schema:
+            type: string
+            required: true
+        - variable: password
+          description: "ACME DNS password"
+          label: "Password"
+          schema:
+            type: string
+            required: true
+        - variable: domain
+          description: "DNS domain name to use for challenges"
+          label: "Domain"
+          schema:
+            type: string
+            required: true
+        - variable: hetzner_token
+          description: "Hetzner DNS API token"
+          label: "Hetzner DNS API token"
+          schema:
+            type: string
+            required: true

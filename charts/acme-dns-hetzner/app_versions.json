@@ -1,0 +1,85 @@
+{
+    "0.1.1": {
+        "healthy": true,
+        "supported": true,
+        "healthy_error": null,
+        "location": "/catalog/charts/acme-dns-hetzner/0.1.1",
+        "last_update": "2024-05-29 16:49:54",
+        "required_features": [],
+        "human_version": "v0.1.1_0.1.1",
+        "version": "0.1.1",
+        "chart_metadata": {
+            "apiVersion": "v2",
+            "name": "acme-dns-hetzner",
+            "annotations": {
+                "title": "ACME DNS for Hetzner"
+            },
+            "description": "ACME DNS provider for clusterissuer using Hetzner's DNS servers",
+            "type": "application",
+            "version": "0.1.1",
+            "appVersion": "v0.1.1",
+            "home": "https://github.com/andreasots/acme-dns-hetzner"
+        },
+        "app_metadata": null,
+        "schema": {
+            "groups": [
+                {
+                    "name": "App Configuration",
+                    "description": "Application specific configuration options"
+                }
+            ],
+            "questions": [
+                {
+                    "variable": "config",
+                    "label": "Application configuration",
+                    "group": "App Configuration",
+                    "schema": {
+                        "type": "dict",
+                        "required": true,
+                        "attrs": [
+                            {
+                                "variable": "username",
+                                "description": "ACME DNS username",
+                                "label": "Username",
+                                "schema": {
+                                    "type": "string",
+                                    "required": true
+                                }
+                            },
+                            {
+                                "variable": "password",
+                                "description": "ACME DNS password",
+                                "label": "Password",
+                                "schema": {
+                                    "type": "string",
+                                    "required": true
+                                }
+                            },
+                            {
+                                "variable": "domain",
+                                "description": "DNS domain name to use for challenges",
+                                "label": "Domain",
+                                "schema": {
+                                    "type": "string",
+                                    "required": true
+                                }
+                            },
+                            {
+                                "variable": "hetzner_token",
+                                "description": "Hetzner DNS API token",
+                                "label": "Hetzner DNS API token",
+                                "schema": {
+                                    "type": "string",
+                                    "required": true
+                                }
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "app_readme": "<h1>ACME DNS for Hetzner</h1>\n<p>ACME DNS provider for clusterissuer using Hetzner's DNS servers</p>",
+        "detailed_readme": "<h1>ACME DNS for Hetzner</h1>\n<p>ACME DNS provider for clusterissuer using Hetzner's DNS servers</p>",
+        "changelog": null
+    }
+}
