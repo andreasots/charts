@@ -3,7 +3,7 @@ kind: CronJob
 metadata:
   name: vhx-downloader
 spec:
-  schedule: "{{ .Values.schedule.minute }} {{ .Values.schedule.hour }} {{ .Values.schdule.dom }} {{ .Values.schedule.month }} {{ .Values.schedule.dow }}"
+  schedule: "{{ .Values.schedule.minute }} {{ .Values.schedule.hour }} {{ .Values.schedule.dom }} {{ .Values.schedule.month }} {{ .Values.schedule.dow }}"
   timeZone: "{{ .Values.timeZone }}"
   jobTemplate:
     spec:
