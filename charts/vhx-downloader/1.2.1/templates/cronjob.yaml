@@ -29,6 +29,7 @@ spec:
           volumeMounts:
             - mountPath: /mnt/destination
               name: destination
+      restartPolicy: OnFailure
       volumes:
         - name: destination
           hostPath:
