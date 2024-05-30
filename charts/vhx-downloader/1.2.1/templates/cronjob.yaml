@@ -8,30 +8,31 @@ spec:
   jobTemplate:
     spec:
       template:
-        concurrentPolicy: Forbid
-        restartPolicy: OnFailure
-        containers:
-          - name: {{ .Chart.Name }}
-            image: "ghcr.io/andreasots/vhx-downloader:{{ .Chart.AppVersion }}"
-            imagePullPolicy: IfNotPresent
-            command:
-              - "tini"
-              - "--"
-              - "/usr/src/.venv/bin/python"
-              - "/usr/src/vhx-downloader.py"
-              - "--client-id={{ .Values.clientId }}"
-              - "--client-secret={{ .Values.clientSecret }}"
-              - "--site-id={{ .Values.siteId }}"
-              - "--dest-dir=/mnt/destination"
-              - "--username={{ .Values.username }}"
-              - "--password={{ .Values.password }}"
-              {{- range .Values.series }}
-              - "--series-id={{ . }}"
-              {{- end }}
-            volumeMounts:
-              - mountPath: /mnt/destination
-                name: destination
-        volumes:
-          - name: destination
-            hostPath:
-              path: "{{ .Values.destinationPath }}"
+        spec:
+          concurrentPolicy: Forbid
+          restartPolicy: OnFailure
+          containers:
+            - name: {{ .Chart.Name }}
+              image: "ghcr.io/andreasots/vhx-downloader:{{ .Chart.AppVersion }}"
+              imagePullPolicy: IfNotPresent
+              command:
+                - "tini"
+                - "--"
+                - "/usr/src/.venv/bin/python"
+                - "/usr/src/vhx-downloader.py"
+                - "--client-id={{ .Values.clientId }}"
+                - "--client-secret={{ .Values.clientSecret }}"
+                - "--site-id={{ .Values.siteId }}"
+                - "--dest-dir=/mnt/destination"
+                - "--username={{ .Values.username }}"
+                - "--password={{ .Values.password }}"
+                {{- range .Values.series }}
+                - "--series-id={{ . }}"
+                {{- end }}
+              volumeMounts:
+                - mountPath: /mnt/destination
+                  name: destination
+          volumes:
+            - name: destination
+              hostPath:
+                path: "{{ .Values.destinationPath }}"
