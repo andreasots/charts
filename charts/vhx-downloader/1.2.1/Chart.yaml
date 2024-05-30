@@ -1,0 +1,9 @@
+apiVersion: v2
+name: vhx-downloader
+annotations:
+  title: "VHX downloader"
+description: Download videos from Vimeo OTT sites such as Dropout.tv 
+type: application
+version: 1.2.1
+appVersion: "v1.2.1"
+home: https://github.com/andreasots/vhx-downloader

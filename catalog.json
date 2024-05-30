@@ -13,7 +13,7 @@
             "latest_version": "0.1.1",
             "latest_app_version": "v0.1.1",
             "latest_human_version": "v0.1.1_0.1.1",
-            "last_update": "2024-05-29 16:49:54",
+            "last_update": "2024-05-30 08:38:36",
             "name": "acme-dns-hetzner",
             "recommended": false,
             "title": "ACME DNS for Hetzner",
@@ -26,6 +26,33 @@
             "screenshots": [],
             "sources": [],
             "icon_url": "https://www.hetzner.com/_resources/themes/hetzner/images/favicons/android-icon-192x192.png"
+        },
+        "vhx-downloader": {
+            "app_readme": "<h1>VHX downloader</h1>\n<p>Download videos from Vimeo OTT sites such as Dropout.tv</p>",
+            "categories": [
+                "media"
+            ],
+            "description": "Download videos from Vimeo OTT sites such as Dropout.tv",
+            "healthy": true,
+            "healthy_error": null,
+            "home": "https://github.com/andreasots/vhx-downloader",
+            "location": "/catalog/charts/vhx-downloader",
+            "latest_version": "1.2.1",
+            "latest_app_version": "v1.2.1",
+            "latest_human_version": "v1.2.1_1.2.1",
+            "last_update": "2024-05-30 09:08:31",
+            "name": "vhx-downloader",
+            "recommended": false,
+            "title": "VHX downloader",
+            "maintainers": [],
+            "tags": [
+                "entertainment",
+                "series",
+                "streaming"
+            ],
+            "screenshots": [],
+            "sources": [],
+            "icon_url": ""
         }
     },
     "test": {}

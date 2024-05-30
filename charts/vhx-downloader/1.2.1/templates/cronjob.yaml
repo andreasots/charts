@@ -1,0 +1,35 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: vhx-downloader
+spec:
+  schedule: "{{ .Values.schedule.minute }} {{ .Values.schedule.hour }} {{ .Values.schdule.dom }} {{ .Values.schedule.month }} {{ .Values.schedule.dow }}"
+  timeZone: "{{ .Values.timeZone }}"
+  jobTemplate:
+    spec:
+      concurrentPolicy: Forbid
+      containers:
+        - name: {{ .Chart.Name }}
+          image: "ghcr.io/andreasots/vhx-downloader:{{ .Chart.AppVersion }}"
+          imagePullPolicy: IfNotPresent
+          command:
+            - "tini"
+            - "--"
+            - "/usr/src/.venv/bin/python"
+            - "/usr/src/vhx-downloader.py"
+            - "--client-id={{ .Values.clientId }}"
+            - "--client-secret={{ .Values.clientSecret }}"
+            - "--site-id={{ .Values.siteId }}"
+            - "--dest-dir=/mnt/destination"
+            - "--username={{ .Values.username }}"
+            - "--password={{ .Values.password }}"
+            {{- range .Values.series }}
+            - "--series-id={{ . }}"
+            {{- end }}
+          volumeMounts:
+            - mountPath: /mnt/destination
+              name: destination
+      volumes:
+        - name: destination
+          hostPath:
+            path: "{{ .Values.destinationPath }}"

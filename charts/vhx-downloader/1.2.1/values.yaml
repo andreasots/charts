@@ -1,0 +1,14 @@
+schedule:
+  minute: "0"
+  hour: "0"
+  dom: "*"
+  month: "*"
+  dow: "*"
+timeZone: "Etc/Utc"
+destinationPath: ""
+clientId: ""
+clientSecret: ""
+siteId: ""
+username: ""
+password: ""
+series: []

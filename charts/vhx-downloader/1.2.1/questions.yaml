@@ -1,0 +1,82 @@
+groups:
+  - name: "App Configuration"
+    description: "Application specific configuration options"
+
+questions:
+  - variable: schedule
+    label: "Schedule"
+    description: "Schedule as a CRON expression"
+    group: "App Configuration"
+    schema:
+      type: cron
+      required: true
+      default:
+        minute: "0"
+        hour: "0"
+        dom: "*"
+        month: "*"
+        dow: "*"
+  - variable: timeZone
+    label: "Schedule Timezone"
+    description: "IANA timezone name of the timezone to evaluate the schedule in"
+    group: "App Configuration"
+    schema:
+      type: string
+      required: true
+      default: "Etc/Utc"
+  - variable: destinationPath
+    label: "Destination"
+    description: "Destination directory where to download the videos"
+    group: "App Configuration"
+    schema:
+      type: hostpath
+      required: true
+  - variable: clientId
+    label: "OAuth client ID"
+    description: "OAuth client ID"
+    group: "App Configuration"
+    schema:
+      type: string
+      required: true
+  - variable: clientSecret
+    label: "OAuth client secret"
+    description: "OAuth client secret"
+    group: "App Configuration"
+    schema:
+      type: string
+      required: true
+  - variable: siteId
+    label: "Site ID"
+    description: "Numeric ID of the Vimeo OTT site"
+    group: "App Configuration"
+    schema:
+      type: int
+      required: true
+  - variable: username
+    label: "Username"
+    description: "Username"
+    group: "App Configuration"
+    schema:
+      type: string
+      required: true
+  - variable: password
+    label: "Password"
+    description: "Password"
+    group: "App Configuration"
+    schema:
+      type: string
+      required: true
+  - variable: series
+    label: "Series"
+    description: "Numeric series IDs"
+    group: "App Configuration"
+    schema:
+      type: list
+      required: true
+      items:
+        - variable: series
+          description: "Numeric series ID"
+          label: "Series"
+          schema:
+            type: int
+            required: true
