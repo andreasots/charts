@@ -66,8 +66,8 @@ questions:
     schema:
       type: string
       required: true
-  - variable: series
-    label: "Series"
+  - variable: seriesIds
+    label: "Series IDs"
     description: "Numeric series IDs"
     group: "App Configuration"
     schema:
@@ -79,4 +79,18 @@ questions:
           label: "Series"
           schema:
             type: int
+            required: true
+  - variable: seriesSlugs
+    label: "Series slugs"
+    description: "Alphanumeric series slug (eg. 'game-changer' in 'dropout.tv/game-changer')"
+    group: "App Configuration"
+    schema:
+      type: list
+      required: true
+      items:
+        - variable: series
+          description: "Alphanumeric series slug"
+          label: "Series"
+          schema:
+            type: string
             required: true

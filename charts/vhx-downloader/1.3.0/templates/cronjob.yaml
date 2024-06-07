@@ -26,8 +26,11 @@ spec:
                 - "--dest-dir=/mnt/destination"
                 - "--username={{ .Values.username }}"
                 - "--password={{ .Values.password }}"
-                {{- range .Values.series }}
+                {{- range .Values.seriesIds }}
                 - "--series-id={{ . }}"
+                {{- end }}
+                {{- range .Values.seriesSlugs }}
+                - "--series-slug={{ . }}"
                 {{- end }}
               volumeMounts:
                 - mountPath: /mnt/destination
