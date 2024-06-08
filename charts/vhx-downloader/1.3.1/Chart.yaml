@@ -4,6 +4,6 @@ annotations:
   title: "VHX downloader"
 description: Download videos from Vimeo OTT sites such as Dropout.tv 
 type: application
-version: 1.3.0
-appVersion: "v1.3.0"
+version: 1.3.1
+appVersion: "v1.3.1"
 home: https://github.com/andreasots/vhx-downloader
